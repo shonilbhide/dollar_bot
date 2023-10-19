@@ -7,6 +7,7 @@
     <li><a href="#why-should-you-use-dollarsplitbot">Why should you use DollarSplitBot?</a></li>
     <li><a href="#check-out-the-video">Check out the video!</a></li>
     <li><a href="#what-is-new-in-this-version">What is new in this version?</a></li>
+    <li><a href="#Why-should-you-use-DollarSplitBot?">Why should you use DollarSplitBot?</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#testing">Testing</a></li>
     <li><a href="#code-coverage">Code Coverage</a></li>
