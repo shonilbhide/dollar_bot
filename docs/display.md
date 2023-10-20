@@ -1,4 +1,4 @@
-# About MyDollarBot's /display Feature
+# About DollarSplitBot's /display Feature
 This feature enables the user to view their expenses for the past month or past day. The option to choose month or day pops up on the screen and they can choose their preference to be displayed afterwards.
 
 # Location of Code for this Feature

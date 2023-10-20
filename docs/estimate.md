@@ -1,8 +1,8 @@
-# About MyDollarBot's /estimate Feature
+# About DollarSplitBot's /estimate Feature
 This feature enables the user to estimate their expenses for the next month or next day. The option to choose next month or next day pops up on the screen and they can choose their preference to be displayed.
 
 # Location of Code for this Feature
-The code that implements this feature can be found [here](https://github.com/sak007/MyDollarBot-BOTGo/blob/estimate-feature/code/estimate.py)
+The code that implements this feature can be found [here](https://github.com/shonilbhide/dollar_bot/blob/main/code/estimate.py)
 
 # Code Description
 ## Functions
@@ -20,25 +20,20 @@ Takes 2 arguments for processing - **queryResult** which is the query result fro
 
 # How to run this feature?
 
-```
-$: python code/code.py
+Rutuja Rashinkar, [19-10-2023 11:02 PM]
+/estimate
 
-$: /start
+My_MyDollarBot_bot, [19-10-2023 11:02 PM]
+Please select the period to estimate
 
-$: /estimate
+Rutuja Rashinkar, [19-10-2023 11:03 PM]
+Next day
 
-Please select the period to estimate:
-$: Next day
-
+My_MyDollarBot_bot, [19-10-2023 11:03 PM]
 Hold on! Calculating...
 
+My_MyDollarBot_bot, [19-10-2023 11:03 PM]
 Here are your estimated spendings for the next day:
 CATEGORIES,AMOUNT 
 ----------------------
-Food $200.0
-Groceries $100.0
-```
-
-![alt text](https://github.com/sak007/MyDollarBot-BOTGo/blob/estimate-feature/docs/estimate.png)
-
-
+Utilities $450.0
