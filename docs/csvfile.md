@@ -27,4 +27,3 @@ My_MyDollarBot_bot, [19-10-2023 10:03 PM]
 Alright. I just created a csv file of your expense history!
 
 My_MyDollarBot_bot, [19-10-2023 10:03 PM]
-
