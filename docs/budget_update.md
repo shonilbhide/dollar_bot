@@ -2,40 +2,23 @@
 The budget_view module contains all the functions required to implement the display add and update features. In essence, all operations involved in addition to a new budget and updating an existing budget are taken care of in this module and are implemented here. 
 
 # Location of Code for this Feature
-The code that implements this feature can be found [here](https://github.com/shonilbhide/dollar_bot/blob/Issue_92_Documentation/code/budget_update.py)
+The code that implements this feature can be found [here](https://github.com/shonilbhide/dollar_bot/blob/Issue_92_Documentation/code/budget_view.py)
 
 # Code Description
 ## Functions
-run(message, bot):
 
-This function is the entry point for the "UPDATE BUDGET" feature. It presents the user with a menu to select a budget type (either overall or by category).
-It checks if the user's chat ID is in the user list and initializes the user's data if not already present.
-It uses the Telegram Bot API to create a menu with available budget types and then waits for the user to make a selection.
-After the user makes a selection, it registers a handler for the next step, which is either setting the overall budget or selecting a category for the budget.
-set_budget_type(message, bot, user_list):
+- run(message, bot)
+This is the main function responsible for implementing the "VIEW BUDGET" feature. When a user interacts with the application, it first checks if an overall budget or category-wise budget is available for that user. Depending on the available budget, it either displays the overall budget or the category-wise budget. If no budget is available, it raises an exception with a message suggesting that the user should add or update their budget.
+It takes two arguments: message, which is the user's message or interaction, and bot, which is the bot used to send responses.
 
-This function is called when the user selects a budget type (overall or category).
-It checks if the selected budget type is valid and proceeds accordingly.
-If the user selects "overall," it calls the set_overall_budget function.
-If the user selects "category," it calls the set_category_budget function.
-set_overall_budget(message, bot, user_list):
+- display_overall_budget(message, bot)
+This function is called when there is an overall budget available for the user. It retrieves the overall budget, converts it to a string, and then sends a message to the user with the overall budget information.
+It takes two arguments: message, which is the user's message, and bot, which is used to send responses.
 
-This function is responsible for setting the overall budget.
-It prompts the user to enter the overall budget and registers a handler to save the entered budget.
-save_overall_budget(message, bot, user_list):
-
-This function handles the user input for the overall budget.
-It validates the input and stores the overall budget in the user's data.
-The budget is saved in a dictionary structure, and the user's data is written back to a JSON file.
-set_category_budget(message, bot, user_list):
-
-This function is responsible for setting the budget for a specific spending category.
-It presents the user with a menu to select a category for budgeting.
-set_category_budget_amount(message, bot, user_list):
-
-This function is called after the user selects a spending category for budgeting.
-It prompts the user to enter the budget amount for the selected category and registers a handler to save the entered amount.
-save_category_budget(message, bot, user_list, category):
+- display_category_budget(message, bot)
+This function is called when there is a category-wise budget available for the user. It retrieves the category-wise budget data, formats it into a string, and sends a message to the user with the category-wise budget information.
+It takes two arguments: message, which is the user's message, and bot, which is used to send responses.
+The purpose of this code is to provide the user with a way to view their budget information. It checks whether an overall budget or category-wise budget is available and then displays the relevant budget details to the user. If no budget information is available, it informs the user that they should first add or update their budget.
 
 
 # How to run this feature?
