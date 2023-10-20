@@ -30,7 +30,6 @@ This function is called after the user selects an expense category. It takes two
 The function then processes the user's choice. If the selected category already exists, it informs the user. If it doesn't exist, it adds the category to the list of expense categories and stores it in the user's expense tracker.
 
 # How to run this feature?
-Once the project is running(please follow the instructions given in the main README.md for this), please type /add_category into the telegram bot.
 
 Sho, [13-10-2023 15:04]
 /add_category
