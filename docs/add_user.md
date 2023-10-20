@@ -27,4 +27,45 @@ The code that implements this feature can be found [here](https://github.com/sho
 
 
 # How to run this feature?
-This code is part of a Telegram bot's functionality that allows users to register people within a chat, stores information about registered users and their financial transactions, and provides a user-friendly interface for interacting with the bot during the registration process.
+
+Rutuja Rashinkar, [19-10-2023 10:32 PM]
+/add_user
+
+My_MyDollarBot_bot, [19-10-2023 10:32 PM]
+Enter the name of the person you want to register:
+
+Rutuja Rashinkar, [19-10-2023 10:32 PM]
+Proff
+
+My_MyDollarBot_bot, [19-10-2023 10:32 PM]
+Proff has been registered successfully!
+
+My_MyDollarBot_bot, [19-10-2023 10:32 PM]
+What would you like to do next?
+
+Rutuja Rashinkar, [19-10-2023 10:32 PM]
+Register Another Person
+
+My_MyDollarBot_bot, [19-10-2023 10:32 PM]
+Enter the name of the person you want to register:
+
+Rutuja Rashinkar, [19-10-2023 10:32 PM]
+Sorr
+
+My_MyDollarBot_bot, [19-10-2023 10:32 PM]
+Sorr has been registered successfully!
+
+My_MyDollarBot_bot, [19-10-2023 10:32 PM]
+What would you like to do next?
+
+Rutuja Rashinkar, [19-10-2023 10:32 PM]
+Finish Registration
+
+My_MyDollarBot_bot, [19-10-2023 10:32 PM]
+Registered Users:
+Rutuja Rashinkar
+A
+B
+C
+Proff
+Sorr

@@ -51,7 +51,6 @@ This function stores the expense record in the user's data, updates who owes who
 This code segment is part of a larger bot application, and it manages the addition of expenses and splitting costs among users. It helps users keep track of their spending and shared expenses with friends or groups.
 
 # How to run this feature?
-Once the project is running(please follow the instructions given in the main README.md for this), please type /add into the telegram bot.
 
 Below you can see an example in text format:
 
