@@ -1,8 +1,8 @@
-# About MyDollarBot's /delete Feature
+# About DollarSplitBot's /delete Feature
 This feature enables the user to delete all of their saved records till date in their expense tracker.
 
 # Location of Code for this Feature
-The code that implements this feature can be found [here](https://github.com/sak007/MyDollarBot-BOTGo/blob/main/code/delete.py)
+The code that implements this feature can be found [here](https://github.com/shonilbhide/dollar_bot/blob/main/code/delete.py)
 
 # Code Description
 ## Functions
@@ -14,12 +14,8 @@ This is the main function used to implement the delete feature. It takes 2 argum
 It takes 1 argument for processing - **chat_id** which is the chat_id of the user whose data is to deleted from the user list. It removes this entry from the user list.
 
 # How to run this feature?
-Once the project is running(please follow the instructions given in the main README.md for this), please type /add into the telegram bot.
-
-Below you can see an example in text format:
-
-Sri Athithya Kruth, [19.10.21 21:50]
+Rutuja Rashinkar, [19-10-2023 10:54 PM]
 /delete
 
-dollarbot,[]
+My_MyDollarBot_bot, [19-10-2023 10:54 PM]
 History has been deleted!

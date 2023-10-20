@@ -1,10 +1,10 @@
-# About MyDollarBot's /edit Feature
+# About DollarSplitBot's /edit Feature
 This feature enables the user to edit a previously entered expense in the app. The use can change the amount set in the bot with this command. 
 
 Please note that this is still a Work In Progress.
 
 # Location of Code for this Feature
-The code that implements this feature can be found [here](https://github.com/sak007/MyDollarBot-BOTGo/blob/main/code/edit.py)
+The code that implements this feature can be found [here](https://github.com/shonilbhide/dollar_bot/blob/main/code/edit.py)
 
 # Code Description
 ## Functions
@@ -28,6 +28,26 @@ It takes 2 arguments for processing - **message** which is the message from the 
 It takes 2 arguments for processing - **message** which is the message from the user, and **bot** which is the telegram bot object from the   edit3(m, bot):: function in the same file. It takes care of category change and edits.
 
 # How to run this feature?
-Sri Athithya Kruth, [20.10.21 20:33]
+Rutuja Rashinkar, [19-10-2023 11:01 PM]
 /edit
-(WORK IN PROGRESS)
+
+My_MyDollarBot_bot, [19-10-2023 11:01 PM]
+Select expense to be edited:
+
+Rutuja Rashinkar, [19-10-2023 11:01 PM]
+Date=19-Oct-2023 22:58,  Category=Food,  Amount=$450.0
+
+My_MyDollarBot_bot, [19-10-2023 11:01 PM]
+What do you want to update?
+
+Rutuja Rashinkar, [19-10-2023 11:01 PM]
+Category=Food
+
+My_MyDollarBot_bot, [19-10-2023 11:01 PM]
+Please select the new category
+
+Rutuja Rashinkar, [19-10-2023 11:01 PM]
+Utilities
+
+My_MyDollarBot_bot, [19-10-2023 11:01 PM]
+Category is updated
