@@ -1,3 +1,7 @@
+'''
+This pdf.py file contains code for generating pdfs for total expenses and for tracking who owes whom how much.
+'''
+
 import helper
 import logging
 from matplotlib import pyplot as plt
