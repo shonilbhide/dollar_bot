@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'result.dart';
+
 class BillSplit extends StatefulWidget {
   const BillSplit({super.key});
 
@@ -8,6 +10,11 @@ class BillSplit extends StatefulWidget {
 }
 
 class _BillSplitState extends State<BillSplit> {
+  double numFriends = 0.0;
+  double tip = 0.0;
+  String tax = '0';
+  String total = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +42,7 @@ class _BillSplitState extends State<BillSplit> {
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
@@ -51,7 +58,7 @@ class _BillSplitState extends State<BillSplit> {
                             ),
                           ),
                           Text(
-                            '\$\$',
+                            '\$ ${total}',
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
@@ -97,21 +104,21 @@ class _BillSplitState extends State<BillSplit> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'XYZ',
+                            numFriends.round().toString(),
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           Text(
-                            '\$\$',
+                            '${tax} %',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           Text(
-                            '\$\$',
+                            tip.toString(),
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
@@ -137,8 +144,12 @@ class _BillSplitState extends State<BillSplit> {
                 divisions: 20,
                 activeColor: Colors.green,
                 inactiveColor: Colors.grey,
-                value: 12,
-                onChanged: (value) {},
+                value: numFriends,
+                onChanged: (value) {
+                  setState(() {
+                    numFriends = value;
+                  });
+                },
               ),
               const SizedBox(height: 16),
               Row(
@@ -169,7 +180,11 @@ class _BillSplitState extends State<BillSplit> {
                               width: 36,
                               height: 36,
                               child: FloatingActionButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    tip = tip - 0.25;
+                                  });
+                                },
                                 backgroundColor: Colors.greenAccent,
                                 child: Icon(
                                   Icons.remove,
@@ -178,7 +193,7 @@ class _BillSplitState extends State<BillSplit> {
                               ),
                             ),
                             Text(
-                              '\$\$',
+                              '\$ ${tip}',
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
@@ -188,7 +203,11 @@ class _BillSplitState extends State<BillSplit> {
                               width: 36,
                               height: 36,
                               child: FloatingActionButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    tip = tip + 0.25;
+                                  });
+                                },
                                 backgroundColor: Colors.greenAccent,
                                 child: Icon(
                                   Icons.add,
@@ -212,6 +231,11 @@ class _BillSplitState extends State<BillSplit> {
                     child: Padding(
                       padding: const EdgeInsets.all(12),
                       child: TextField(
+                        onChanged: (value) {
+                          setState(() {
+                            tax = value;
+                          });
+                        },
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -263,7 +287,12 @@ class _BillSplitState extends State<BillSplit> {
               ),
               SizedBox(height: 16),
               TextButton(
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Result(total, tax, numFriends, tip),
+                  ),
+                ),
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.green,
                 ),
@@ -291,7 +320,17 @@ class _BillSplitState extends State<BillSplit> {
         style: OutlinedButton.styleFrom(
           padding: EdgeInsets.all(12),
         ),
-        onPressed: () {},
+        onPressed: () {
+          if (text == 'C') {
+            setState(() {
+              total = '';
+            });
+          } else {
+            setState(() {
+              total = total + text;
+            });
+          }
+        },
         child: Text(
           text,
           style: TextStyle(
