@@ -24,14 +24,14 @@ class _ResultState extends State<Result> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(left: 24, right: 24),
+        margin: const EdgeInsets.only(left: 24, right: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               alignment: Alignment.centerLeft,
-              margin: EdgeInsets.only(top: 36),
-              child: Text(
+              margin: const EdgeInsets.only(top: 36),
+              child: const Text(
                 'Result: ',
                 style: TextStyle(
                   fontSize: 24,
@@ -51,11 +51,11 @@ class _ResultState extends State<Result> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Share: ',
                           style: TextStyle(
                             fontSize: 24,
@@ -63,8 +63,8 @@ class _ResultState extends State<Result> {
                           ),
                         ),
                         Text(
-                          '\$ ${share}',
-                          style: TextStyle(
+                          '\$ $share',
+                          style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
                           ),
@@ -72,8 +72,8 @@ class _ResultState extends State<Result> {
                       ],
                     ),
                   ),
-                  SizedBox(width: 16),
-                  Padding(
+                  const SizedBox(width: 16),
+                  const Padding(
                     padding: EdgeInsets.all(12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,29 +102,29 @@ class _ResultState extends State<Result> {
                       ],
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           widget.numFriends.round().toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
                           '${widget.tax} %',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
                           widget.tip.toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                           ),
@@ -135,16 +135,16 @@ class _ResultState extends State<Result> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
-              'Each person pays \$${share}!!',
-              style: TextStyle(
+              'Each person pays \$$share!!',
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
               width: MediaQuery.of(context).size.width / 2,
               child: TextButton(
@@ -152,7 +152,7 @@ class _ResultState extends State<Result> {
                   backgroundColor: Colors.green,
                 ),
                 onPressed: () => Navigator.pop(context),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Calculate again?',
                     style: TextStyle(

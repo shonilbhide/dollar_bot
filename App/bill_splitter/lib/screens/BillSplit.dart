@@ -20,7 +20,7 @@ class _BillSplitState extends State<BillSplit> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(left: 24, right: 24),
+          margin: const EdgeInsets.only(left: 24, right: 24),
           child: Column(
             children: [
               Container(
@@ -46,11 +46,11 @@ class _BillSplitState extends State<BillSplit> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Total Amount: ',
                             style: TextStyle(
                               fontSize: 16,
@@ -58,8 +58,8 @@ class _BillSplitState extends State<BillSplit> {
                             ),
                           ),
                           Text(
-                            '\$ ${total}',
-                            style: TextStyle(
+                            '\$ $total',
+                            style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
                             ),
@@ -67,8 +67,8 @@ class _BillSplitState extends State<BillSplit> {
                         ],
                       ),
                     ),
-                    SizedBox(width: 16),
-                    Padding(
+                    const SizedBox(width: 16),
+                    const Padding(
                       padding: EdgeInsets.all(12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -97,29 +97,29 @@ class _BillSplitState extends State<BillSplit> {
                         ],
                       ),
                     ),
-                    SizedBox(width: 16),
+                    const SizedBox(width: 16),
                     Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             numFriends.round().toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           Text(
-                            '${tax} %',
-                            style: TextStyle(
+                            '$tax %',
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           Text(
                             tip.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
@@ -163,8 +163,8 @@ class _BillSplitState extends State<BillSplit> {
                     ),
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 12),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 12),
                           child: Text(
                             'Tip: ',
                             style: TextStyle(
@@ -186,15 +186,15 @@ class _BillSplitState extends State<BillSplit> {
                                   });
                                 },
                                 backgroundColor: Colors.greenAccent,
-                                child: Icon(
+                                child: const Icon(
                                   Icons.remove,
                                   color: Colors.black,
                                 ),
                               ),
                             ),
                             Text(
-                              '\$ ${tip}',
-                              style: TextStyle(
+                              '\$ $tip',
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -209,7 +209,7 @@ class _BillSplitState extends State<BillSplit> {
                                   });
                                 },
                                 backgroundColor: Colors.greenAccent,
-                                child: Icon(
+                                child: const Icon(
                                   Icons.add,
                                   color: Colors.black,
                                 ),
@@ -220,7 +220,7 @@ class _BillSplitState extends State<BillSplit> {
                       ],
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Container(
                     width: MediaQuery.of(context).size.width / 3,
                     height: 84,
@@ -242,7 +242,7 @@ class _BillSplitState extends State<BillSplit> {
                             borderRadius: BorderRadius.circular(16),
                           ),
                           labelText: "Tax %: ",
-                          labelStyle: TextStyle(
+                          labelStyle: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                               color: Colors.black),
@@ -252,7 +252,7 @@ class _BillSplitState extends State<BillSplit> {
                   )
                 ],
               ),
-              SizedBox(height: 48),
+              const SizedBox(height: 48),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -285,7 +285,7 @@ class _BillSplitState extends State<BillSplit> {
                   buildButton('C'),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               TextButton(
                 onPressed: () => Navigator.push(
                   context,
@@ -296,7 +296,7 @@ class _BillSplitState extends State<BillSplit> {
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.green,
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Split Bill',
                     style: TextStyle(
@@ -318,7 +318,7 @@ class _BillSplitState extends State<BillSplit> {
     return Expanded(
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
         ),
         onPressed: () {
           if (text == 'C') {
@@ -333,7 +333,7 @@ class _BillSplitState extends State<BillSplit> {
         },
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w600,
             color: Colors.black,
