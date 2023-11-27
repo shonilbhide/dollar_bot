@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DollarBot</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <py-config>
+      [[runtimes]]
+      src = "runtime/pyodide.js"
+      name = "pyodide-0.21.3"
+      lang = "python" 
+    </py-config>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="icons/png" href="/icon-128.png" />
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="runtime/pyscript.css" />
+    <script defer src="runtime/pyscript.js"></script>
+  </head>
+  <body>
+    <h2>DollarBot</h2>
+
+    <div>
+      <h3>Add User</h3>
+      <label for="userName">Name:</label>
+      <input type="text" id="userName" placeholder="Enter name" />
+
+      <label for="userEmail">Email:</label>
+      <input type="email" id="userEmail" placeholder="Enter email" />
+
+      <button id="addUserButton">Add User</button>
+    </div>
+
+    <div>
+      <h3>Split Expense</h3>
+      <label for="expenseName">Expense Name:</label>
+      <input type="text" id="expenseName" placeholder="Enter expense name" />
+
+      <label for="expenseAmount">Expense Amount:</label>
+      <input type="number" id="expenseAmount" placeholder="Enter expense amount" />
+
+      <label for="selectUsers">Select Users</label>
+      <div id="userCheckboxes">
+      </div>
+
+      <button id="calculateButton">Calculate Split</button>
+
+      <div id="result"></div>
+    </div>
+
+    <py-script>
+      from js import document as popup
+    
+      users = []
+    
+      def add_user(event):
+          name = popup.getElementById('userName').value
+          email = popup.getElementById('userEmail').value
+    
+          if name and email:
+              users.append({'name': name, 'email': email})
+              update_user_checkboxes()
+              clear_add_user_fields()
+    
+      def update_user_checkboxes():
+          user_checkboxes = popup.getElementById('userCheckboxes')
+          user_checkboxes.innerHTML = ""
+          for user in users:
+              checkbox = popup.createElement('input')
+              checkbox.type = 'checkbox'
+              checkbox.id = f"userCheckbox_{user['email']}"
+              checkbox.value = user['email']
+    
+              label = popup.createElement('label')
+              label.htmlFor = checkbox.id
+              label.textContent = f"{user['name']} ({user['email']})"
+    
+              br = popup.createElement('br')
+    
+              user_checkboxes.appendChild(checkbox)
+              user_checkboxes.appendChild(label)
+              user_checkboxes.appendChild(br)
+    
+      def clear_add_user_fields():
+          popup.getElementById('userName').value = ""
+          popup.getElementById('userEmail').value = ""
+    
+      def calculate_split(event):
+          expense_name = popup.getElementById('expenseName').value
+          expense_amount_str = popup.getElementById('expenseAmount').value
+    
+          selected_users = [checkbox.value for checkbox in popup.querySelectorAll('input[type=checkbox]:checked')]
+    
+          if not (expense_name and expense_amount_str and selected_users):
+              popup.getElementById('result').innerHTML = "<p>Please fill in all fields and select at least one user.</p>"
+              return
+    
+          try:
+              expense_amount = float(expense_amount_str)
+          except ValueError:
+              popup.getElementById('result').innerHTML = "<p>Please enter a valid expense amount.</p>"
+              return
+    
+          num_selected_users = len(selected_users)
+          split_amount = expense_amount / num_selected_users
+    
+          result_text = f"{expense_name} Split:<br>"
+          for user_email in selected_users:
+              user_name = next((user['name'] for user in users if user['email'] == user_email), "Unknown User")
+              result_text += f"{user_name} ({user_email}): {split_amount:.2f}<br>"
+    
+          popup.getElementById('result').innerHTML = f"<p>{result_text}</p>"
+    
+      popup.getElementById('addUserButton').onclick = add_user
+      popup.getElementById('calculateButton').onclick = calculate_split
+    </py-script>
+    
+  </body>
+</html>
