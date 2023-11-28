@@ -25,6 +25,8 @@ import csvfile
 import add_user
 import delete_user
 
+from reminder import schedule_reminder, cancel_reminder
+
 configs = Properties()
 
 with open("user.properties", "rb") as read_prop:
@@ -276,6 +278,27 @@ def command_budget(message):
 @bot.message_handler(commands=["send_mail"])
 def command_send_mail(message):
     send_mail.run(message, bot)
+
+# Command handler for setting reminders
+@bot.message_handler(commands=["set_reminder"])
+def command_set_reminder(message):
+    chat_id = message.chat.id
+    reminder_message = "Check your expenses and settle debts."
+
+    # Schedule the reminder
+    schedule_reminder(chat_id, reminder_message, bot)
+
+    bot.send_message(chat_id, "Reminder set. You will receive a reminder every one minute.")
+
+# Command handler for canceling reminders
+@bot.message_handler(commands=["cancel_reminder"])
+def command_cancel_reminder(message):
+    chat_id = message.chat.id
+
+    # Cancel the reminder
+    cancel_reminder(chat_id, bot)
+
+    bot.send_message(chat_id, "Reminders canceled.")
 
 
 # not used
