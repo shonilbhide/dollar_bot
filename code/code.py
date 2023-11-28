@@ -29,7 +29,7 @@ from reminder import schedule_reminder, cancel_reminder
 
 configs = Properties()
 
-with open("D:/CSC/Fall23_sem1/SE/SE_Final_proj/AbhiVersion/CSC510_Project3_dollar_bot/user.properties", "rb") as read_prop:
+with open("user.properties", "rb") as read_prop:
     configs.load(read_prop)
 user_list = helper.read_json()
 api_token = str(configs.get("api_token").data)
