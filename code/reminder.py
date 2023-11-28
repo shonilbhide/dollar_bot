@@ -7,37 +7,7 @@ import helper
 scheduled_jobs = {}
 stop_schedule_thread = {}    # False
 
-# # Function to send reminders
-# def send_reminder(chat_id, reminder_message, bot):
-#     bot.send_message(chat_id, f"Reminder: {reminder_message}")
 
-# # Function to schedule a reminder job
-# def schedule_reminder(chat_id, reminder_message, bot):
-#     # Schedule the job for checking and sending reminders every 1 minute
-#     job = schedule.every(1).minutes.do(send_reminder, chat_id, reminder_message, bot)
-
-#     # Store the scheduled job in the dictionary
-#     scheduled_jobs[chat_id] = job
-
-#     # Start the scheduler in a separate thread
-#     schedule_thread = threading.Thread(target=schedule_job)
-#     schedule_thread.start()
-
-# # Function to cancel a scheduled reminder
-# def cancel_reminder(chat_id):
-#     # Retrieve the scheduled job from the dictionary
-#     job = scheduled_jobs.get(chat_id)
-
-#     # Cancel the job if it exists
-#     if job:
-#         job.cancel()
-#         del scheduled_jobs[chat_id]
-
-# # Function to run the scheduler
-# def schedule_job():
-#     while True:
-#         schedule.run_pending()
-#         time.sleep(1)
 
 
 
@@ -67,13 +37,6 @@ def schedule_reminder(chat_id, reminder_message, bot):
 
 # Function to cancel a scheduled reminder
 def cancel_reminder(chat_id, bot):
-    # # Check if the job is in the dictionary
-    # if chat_id in scheduled_jobs:
-    #     # Manually remove the job from the dictionary
-    #     del scheduled_jobs[chat_id]
-    #     print(f"Reminder cancelled for chat_id: {chat_id}")
-    # else:
-    #     print(f"No active reminder found for chat_id: {chat_id}")
     # Check if the job is in the dictionary
     global stop_schedule_thread
     if chat_id in scheduled_jobs:
@@ -99,9 +62,6 @@ def schedule_job(chat_id):
 
 # Function to check for dues and set reminders
 def set_reminder(chat_id, bot):
-    #chat_id = message.chat.id
-    #reminder_message = "Check your expenses and settle debts."
-
     if chat_id not in scheduled_jobs:
         print(f"Reminder for chat_id {chat_id} already cancelled.")
         return
@@ -113,15 +73,6 @@ def set_reminder(chat_id, bot):
     # Get user details
     user_details = user_data.get(str(chat_id), {})
 
-    # # Check if there are any dues
-    # if any(owed_amount > 0 for owed_amount in user_details.get("owed", {}).values()):
-    #     # Set the reminder and schedule it
-    #     schedule_reminder(chat_id, reminder_message, bot)
-    #     bot.send_message(chat_id, "Reminders set. You will receive a reminder every one minute.")
-    # else:
-    #     bot.send_message(chat_id, "No reminders set. No dues to settle.")
-    # Check if there are any dues
-    # Check if there are any dues
     dues_exist = any(owed_amount > 0 for owed_amount in user_details.get("owed", {}).values())
 
     if dues_exist:
@@ -133,7 +84,6 @@ def set_reminder(chat_id, bot):
 
         print(detailed_reminder)
         # Set the reminder and schedule it
-        #schedule_reminder(chat_id, detailed_reminder, bot)
         bot.send_message(chat_id, detailed_reminder)
     else:
         bot.send_message(chat_id, "No reminders set. No dues to settle.")
