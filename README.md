@@ -70,11 +70,6 @@ DollarSplitBot: Where simplicity meets financial harmony at your fingertips.
 
 To demonstrate our application's functionality and showcase its working examples, we have produced a YouTube video for the DollarSplitBot project. In this video, we showcase that the system operates as intended. You can view the video by clicking on the following link:  [YouTube Link](https://youtu.be/JT06PTMHz7Y) 
 
-## What is new in this version?
-
-Checkout the [this documentation](docs/Update_Version.pdf)
-## Installation
-
 The below instructions can be followed in order to set-up this bot at your end in a span of few minutes! Let's get started:
 
 1. Clone this repository to your local system.
@@ -88,12 +83,6 @@ The below instructions can be followed in order to set-up this bot at your end i
  ```
  https://desktop.telegram.org/
  ```
-
-Steps to install Chrome Extension:
-
-1. Go to Extensions -> Enable Developer mode
-2. Click on Load Unpacked
-3. Select the pyscript-local-runtime folder from the repo
 
 ## How to run?
 
@@ -116,6 +105,12 @@ Steps to install Chrome Extension:
 A successful run will generate a message on your terminal that says "TeleBot: Started polling." 
 
 5. In the Telegram app, search for your newly created bot by entering the username and open the same. Now, on Telegram, enter the "/start" or "menu" command, and you are all set to track your expenses!
+
+Steps to install Chrome Extension:
+
+1. Go to Extensions -> Enable Developer mode
+2. Click on Load Unpacked
+3. Select the pyscript-local-runtime folder from the repo
 
 ## Configuring Email Credentials for SMTP: Sending Emails from Your Account
 
