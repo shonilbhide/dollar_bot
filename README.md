@@ -105,25 +105,17 @@ Steps to install Chrome Extension:
 
 3. BotFather will now confirm the creation of your bot and provide a TOKEN to access the HTTP API - copy and save this token for future use.
 
-4. In the repo directory (where you cloned it), run these commands to (i) grant execution access to a bash script, and (ii) execute that bash script to run the Telegram Bot:
+4. In the repo directory, find a file named user.properties and assign your API token to the 'api_token' variable.
+
+5. Open the 'code.py' file present in the 'code' folder in the repo directory in a text editor and pass the path address to the 'user.properties' file as the first parameter to the 'open()' function call (line 30).
+
+6. Open the terminal in the 'code' folder and run the code.py file using the following command:
 ```
-   chmod a+x run.sh
-   ./run.sh
+  python code.py
 ```
-   
-(OR)
-```
-   chmod a+x run.sh
-   bash run.sh
-```
-```Note```: It will ask you to paste the API token you received from Telegram in step 4.
 A successful run will generate a message on your terminal that says "TeleBot: Started polling." 
 
 5. In the Telegram app, search for your newly created bot by entering the username and open the same. Now, on Telegram, enter the "/start" or "menu" command, and you are all set to track your expenses!
-
-### Run Automatically at Startup
-
-To run the script automatically at startup / reboot, simply add the `.run_forever.sh` script to your `.bashrc` file, which executes whenever you reboot your system.
 
 ## Configuring Email Credentials for SMTP: Sending Emails from Your Account
 
@@ -185,7 +177,7 @@ Certainly, you can watch this video [YouTube Link](https://youtu.be/JT06PTMHz7Y)
 
 This project uses various automated analysis tools like 
 - pylint and flask8 for code formating
-- pytest for tesing
+- pytest for testing
 - coverage.py for code coverage
 - Travis CI for automated testing
   
