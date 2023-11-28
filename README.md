@@ -41,8 +41,8 @@
 [![CircleCI](https://dl.circleci.com/status-badge/img/circleci/KRJsvuprWQqWTJMZXoedkH/S11gsHj3tEGpX8YLaeYmJ5/tree/main.svg?style=svg&circle-token=03704a79749569bc04a53ce05296fb34003e4713)](https://dl.circleci.com/status-badge/redirect/circleci/KRJsvuprWQqWTJMZXoedkH/S11gsHj3tEGpX8YLaeYmJ5/tree/main)
 [![codecov](https://codecov.io/gh/usmanwardag/dollar_bot/branch/main/graph/badge.svg?token=PYAWX95R67)](https://codecov.io/gh/usmanwardag/dollar_bot)
 
-[![GitHub issues](https://img.shields.io/github/issues/shonilbhide/dollar_bot)](https://github.com/abhi934/CSC510_Project3_dollar_bot/issues)
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/shonilbhide/dollar_bot)](https://github.com/abhi934/CSC510_Project3_dollar_bot/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub issues](https://img.shields.io/github/issues/abhi934/CSC510_Project3_dollar_bot)](https://github.com/abhi934/CSC510_Project3_dollar_bot/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/abhi934/CSC510_Project3_dollar_bot)](https://github.com/abhi934/CSC510_Project3_dollar_bot/issues?q=is%3Aissue+is%3Aclosed)
 
 <hr>
 
