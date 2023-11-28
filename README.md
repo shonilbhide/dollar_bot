@@ -88,6 +88,13 @@ The below instructions can be followed in order to set-up this bot at your end i
  ```
  https://desktop.telegram.org/
  ```
+
+Steps to install Chrome Extension:
+
+1. Go to Extensions -> Enable Developer mode
+2. Click on Load Unpacked
+3. Select the pyscript-local-runtime folder from the repo
+
 ## How to run?
 
 1. In Telegram, search for "BotFather". Click on "Start", and enter the following command:
